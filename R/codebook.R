@@ -178,14 +178,14 @@ create_codebook  <- function(variables_input, markdown_file, footer_text, title,
 # test
 ##################################################
 
-variables_input <- read.csv("data/CJEU_codebook.csv", stringsAsFactors = FALSE)
-markdown_file <- "data/CJEU_codebook_content.txt"
-chip_data_input <- read.csv("data/dataset_summary.csv", stringsAsFactors = FALSE)
+variables_input <- read.csv("example/CJEU_codebook.csv", stringsAsFactors = FALSE)
+markdown_file <- "example/CJEU_codebook_content.txt"
+chip_data_input <- read.csv("example/dataset_summary.csv", stringsAsFactors = FALSE)
 
-codebook_template <- readLines("data/templates/codebook-template.tex")
-table_of_contents_template <- readLines("data/templates/table-of-contents-template.tex")
-dataset_template <- readLines("data/templates/dataset-template.tex")
-variable_template <- readLines("data/templates/variable-template.tex")
+codebook_template <- readLines("templates/codebook-template.tex")
+table_of_contents_template <- readLines("templates/table-of-contents-template.tex")
+dataset_template <- readLines("templates/dataset-template.tex")
+variable_template <- readLines("templates/variable-template.tex")
 
 
 
@@ -194,6 +194,7 @@ create_codebook(
   markdown_file = markdown_file,
   chip_data_input = chip_data_input,
   footer_text = "Court of Justice of the European Union (CJEU) Dataset",
+  theme_color = "4D9FEB"
 )
 
 ###########################################################################
