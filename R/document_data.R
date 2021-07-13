@@ -99,7 +99,7 @@ document_data <- function(file_path, variables_input, datasets_input, include_va
     if (include_variable_type) {
       variables <- stringr::str_c(
         "\\item{", variables_subset$variable, "}",
-        "{", "\\\\code\\{", variables_subset$type, "\\}. ", variables_subset$description, "}"
+        "{", "\\code{", variables_subset$type, "}. ", variables_subset$description, "}"
       )
     } else {
       variables <- stringr::str_c(

@@ -5,25 +5,46 @@
 \title{Create dataset documentation}
 \usage{
 document_data(
-  path,
-  variables_file,
-  datasets_file = NULL,
-  markdown_file = NULL,
+  file_path,
+  variables_input,
+  datasets_input,
+  include_variable_type = FALSE,
   author = NULL,
   package = NULL
 )
 }
 \arguments{
-\item{path}{The path to the folder where the output file should be saved. If
-you're developing an \code{R} package and you're working directory is set
-to the project directory, this argument should be \code{"R/"}.}
+\item{file_path}{The path to the folder where the output file should be
+saved. If you're developing an \code{R} package and you're working
+directory is set to the project directory, this argument should be
+\code{"R/"}.}
 
-\item{datasets_file}{The path and file for information about the datasets.
-The file must be a \code{.csv} file.}
+\item{variables_input}{A data frame containing infromation on each variable.
+This data frame must include: (1) a variable called \code{dataset}, where
+each dataset maps exactly to the datasets in the \code{dataset} variable in
+the \code{datasets_input} data frame; and (2) a variable called
+\code{description} that is a description of each variable. Text wrapped in
+braces will be formatted as code. Optionally, the data frame can include a
+variable called \code{type} that indicates the type of each variable (e.g.,
+numeric, string, etc.). If this variable is included, and the
+\code{include_variable_type} argument is set to \code{TRUE}, then the
+variable type will be included at the beginning of each variable
+description.}
 
-\item{markdown_file}{The path and file for a markdown file that contains a
-header and description for each dataset. The markdown file must be a
-\code{.txt}, \code{.md}, or \code{.Rmd} file.}
+\item{datasets_input}{A data frame containing information on each dataset.
+This data frame must include: (1) a variable called \code{dataset} that is
+the name of each dataset, which will be used as the heading for each
+dataset section; (2) a variable called \code{label} that is a short label
+for each dataset (one line), which will be used as the subheading for each
+dataset section; and (3) a variable called \code{description} that is a
+description of each dataset, which will be included before the description
+of each variable. Text wrapped in braces will be formatted as code. The
+dataset names should be valid \code{R} object names.}
+
+\item{include_variable_type}{A logical value indicating whether to include
+the type of the variable in the variable description. The
+\code{variables_input} data frame must have a variable called \code{type}
+or you will get an error.}
 
 \item{author}{Optional. A string or string vector indicating the name of the
 package author(s). If provided, these names will be included in the header
@@ -32,52 +53,18 @@ of each \code{.R} file produced.}
 \item{package}{Optional. A string indicating the name of the package that the
 data will be distributed in. If provided, the name of the package will be
 included in the header of each \code{.R} file produced.}
-
-\item{codebook_file}{The path and file for the codebook. The codebook must be
-a \code{.csv} file.}
 }
 \description{
-This function generates \code{R} documentation for one or more datasets based
-on a codebook saved as a \code{.csv} file. Whenever you edit the \code{.csv},
-you can easily regenerate the \code{R} documentation without making the
-changes in multiple places. This is especially useful when you want to
-distribute the codebook in multiple formats. This package also provides
-functions for converting a \code{.csv} codebook to other common formats,
-including \code{.txt} (plain text), \code{.md} (markdown), \code{.Rmd}
-(\code{R} markdown), and \code{.tex} (\code{LaTeX}).
-}
-\details{
-Running this function generates one \code{.R} file per dataset and saves
-these files in the folder indicated by the \code{path} argument. If you're
-developing an \code{R} package, this path should be to the \code{R/} folder.
-After you run \code{document_data()} to produce an \code{.R} file for each
-dataset, you can run \code{roxygen2} using \code{devetools::document()} to
-generate a \code{.Rd} (\code{R} documentation) file for each dataset. These
-\code{.Rd} files will be saved to the \code{man/} folder, as usual.
-
-At minimum, you have to provide the path to a \code{.csv} file that contains
-a codebook for each dataset and a text file that contains a title a
-description for each dataset. The text file can be a \code{.txt}, a
-\code{.md}, or a \code{.Rmd} file.
-
-The \code{.csv} file must include a variable called \code{dataset} that
-indicates the name of each dataset, a variable called \code{variable} that
-indicates the name of each variable in each dataset, and a variable called
-\code{description} that includes a description for each variable. Optionally,
-the \code{.csv} file can include a variable called \code{type} that indicates
-the type of each variable (e.g., \code{numeric}, \code{string}, \code{dummy},
-etc.). If this variable is included, the type of the variable will be
-included in the description in the final documentation file. To format text
-as code in a variable description, wrap the text in curly brackets or use
-markdown syntax (i.e., wrap the text in tick marks).
-
-The text file (\code{.txt}, \code{.md}, or \code{.Rmd}) should include one
-heading and one description per dataset. The heading will be used as the
-title for the documentation in the \code{.R} output file. The datasets must
-be in the same order as in the \code{.csv} file. The heading should be
-formatted using markdown syntax (i.e., include at least one \code{#} at the
-start of the line). The description should follow the heading and can include
-multiple paragraphs. It is not necessary to include line breaks between
-paragaphs or before or after titles. To format text as code, you can use
-markdown syntax (i.e., wrap the text in tick marks).
+This function generates \code{R} documentation for one or more datasets. You
+need to provide a data frame with a description of each dataset and a data
+frame with a description of each variable. Whenever you update these data
+frames, you can easily regenerate the \code{R} documentation without making
+the changes in multiple places. Running this function generates one \code{.R}
+file per dataset and saves these files in the folder indicated by the
+\code{path} argument. If you're developing an \code{R} package, this path
+should be to the \code{R/} folder in your package directory. After you run
+\code{document_data()} to produce an \code{.R} file for each dataset, you can
+run \code{roxygen2} using \code{devetools::document()} to generate a
+\code{.Rd} (\code{R} documentation) file for each dataset. These \code{.Rd}
+files will be saved to the \code{man/} folder, as usual.
 }
