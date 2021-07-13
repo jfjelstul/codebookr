@@ -4,6 +4,13 @@ This R package contains tools for easily generating documentation for datasets. 
 
 These functions make it easy to produce documentation for a set of datasets and/or an `R` data package. All you have to provide, for both functions, is two `.csv` files, one with some information about each dataset in your project and another with some information about each variable in each dataset. Then, when you go to update your documentation, all you have to do is update the two `.csv` files and re-run these functions. This saves you from having to make the same change in multiple places, which can be a really tedious and error-prone process, especially for large datasets and projects with multiple datasets. 
 
+Example of a codebook made with `codebookr::create_codebook()` using the built-in template: 
+
+<div>
+  <img src="https://github.com/jfjelstul/codebookr/blob/master/example/images/cover-page.png?raw=true" width="45%">
+  <img src="https://github.com/jfjelstul/codebookr/blob/master/example/images/dataset-page.png?raw=true" width="45%">
+</div>
+  
 ## Installation
 
 You can install the latest development version of the `codebookr` package from GitHub:
@@ -67,7 +74,7 @@ codebookr::create_codebook(
 )
 ```
 
-There are additional customization options that are covered by the documentation, which you can see by running `?create_codebook`. You can [request](https://github.com/jfjelstul/codebookr/issues) additinal customization options.
+There are additional customization options that are covered by the documentation, which you can see by running `?create_codebook`. You can [request](https://github.com/jfjelstul/codebookr/issues) additional customization options.
 
 ## Example 2: Creating Documentation for an R Data Package
 
