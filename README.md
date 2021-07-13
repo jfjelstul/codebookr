@@ -1,8 +1,8 @@
 # codebookr
 
-This R package contains tools for easily generating documentation for datasets. There are two main functions: `create_codebook()` and `document_data()`. The function `create_codebook()` generates `LaTeX` code (a `.tex` file) for a nicely-formatted `.pdf` codebook. There's an example in the `example/` directory. The function `document_data()` automatically generates `R` documentation for an `R` data package (i.e., an `R` script for each dataset in your project with `roxygen2` comments). 
+This R package contains tools for easily generating documentation for datasets. There are two main functions: `create_codebook()` and `document_data()`. The function `create_codebook()` generates `LaTeX` code (a `.tex` file) for a nicely-formatted `.pdf` codebook with a modern, minimalist look. There's an example in the `example/` directory. The function `document_data()` automatically generates `R` documentation for an `R` data package (i.e., an `R` script for each dataset in your project with `roxygen2` comments).
 
-These functions make it easy to produce documentation for a set of datasets and/or an `R` data package. All you have to provide, for both functions, is two `.csv` files, one with some information about each dataset in your project and another with some information about each variable in each dataset. Then, when you go to update your documentation, all you have to do is update the two `.csv` files and re-run these functions. This saves you from having to make the same change in multiple places, which can be a really tedious and error-prone process, especially for large datasets and projects with multiple datasets. 
+These functions make it easy to produce documentation for a data project. All you have to provide, for both functions, is two `.csv` files, one with some information about each dataset in your project and another with some information about each variable in each dataset. Then, when you go to update your documentation, all you have to do is update the two `.csv` files and re-run these functions. This saves you from having to make the same change in multiple places, which can be a really tedious and error-prone process, especially for large datasets and projects with multiple datasets. 
 
 Example of a codebook made with `codebookr::create_codebook()` using the built-in template: 
 
@@ -10,7 +10,7 @@ Example of a codebook made with `codebookr::create_codebook()` using the built-i
   <img src="https://github.com/jfjelstul/codebookr/blob/master/example/images/cover-page.png?raw=true" width="45%">
   <img src="https://github.com/jfjelstul/codebookr/blob/master/example/images/dataset-page.png?raw=true" width="45%">
 </div>
-  
+
 ## Installation
 
 You can install the latest development version of the `codebookr` package from GitHub:
@@ -22,7 +22,7 @@ devtools::install_github("jfjelstul/codebookr")
 
 ## Citation
 
-If you use data from the `codebookr` package in a project or paper, please cite the package:
+If you use data from the `codebookr` package in a project, please cite the package:
 
 > Joshua Fjelstul (2021). codebookr: Tools to Document Datasets in R. R package version 0.1.0.9000.
 
@@ -45,7 +45,7 @@ If you notice an error in the data or a bug in the `R` package, please report it
 
 Creating a nicely-formatted codebooks in `LaTeX` can be a slow and involved process, and doing it well usually requires using a variety of packages, writing custom macros, and using `tikz` and `XeLaTeX`. The `create_codebook()` function in the `codebookr` package automatically creates a `.tex` file for a nicey-formatted codebook that you can compile using `XeLaTeX` based on two data frames that you provide, one with information on each dataset and another with information on each variable in each dataset. The template is appropriate for nearly any kind of data project and the `create_codebook()` function includes some customization options. You can always edit the `.tex` file that is generated to further customize the formatting of the codebook. Using this function saves you from having to translate your documentation to `LaTeX` code. 
 
-The following example shows how I generated the codebook for my [European Union Infringement Procedure (EUIP) Database](https://github.com/jfjelstul/euip). You can include multiple authors by providing a vector of author names for the `author_names` argument. For the `title_text` and `footer_text` arguments, you can also include valid `LaTeX` code, but you have to escape each `\` with an additional `\`. So for example, a line break would be `////`. 
+The following example shows how I generated the codebook for my [European Union Infringement Procedure (EUIP) Database](https://github.com/jfjelstul/euip). You can include multiple authors by providing a vector of author names for the `author_names` argument. For the `title_text` and `footer_text` arguments, you can also include valid `LaTeX` code, but you have to escape each `\` with an additional `\`. So for example, a line break would be `\\\\`. 
 
 The `dataset_input` data frame must include: (1) a variable called `dataset` that is the name of each dataset, which will be used as the heading for each dataset section; (2) a variable called `label` that is a short label for each dataset (one line), which will be used as the subheading for each dataset section; and (3) a variable called `description` that is a description of each dataset, which will be included before the description of each variable. Text wrapped in braces will be formatted as code. The dataset names should be valid `R` object names. 
 
@@ -74,13 +74,13 @@ codebookr::create_codebook(
 )
 ```
 
-There are additional customization options that are covered by the documentation, which you can see by running `?create_codebook`. You can [request](https://github.com/jfjelstul/codebookr/issues) additional customization options.
+The customization options are covered in the documentation, which you can see by running `?codebookr::create_codebook`. You can request additional customization options [here](https://github.com/jfjelstul/codebookr/issues).
 
 ## Example 2: Creating Documentation for an R Data Package
 
 Packaging up a group of datasets into an `R` data package is a great way to keep your data and replication code organized and to share data with colleagues. But writing the documentation can be really tedious. You have to write an `R` script with `roxygen2` comments for each dataset and then build the `.Rd` documentation files for the package, which are stored in the `man/` folder in your package directory, using `devtools::document()`. The function `document_data()` in the `codebookr` package automatically generates an `R` script with `roxygen2` comments for each of the datasets in your project based on two data frames that you provide, one with information on each dataset and another with information on each variable in each dataset. This way, you don't have to write any `roxygen2` comments to document your data. 
 
-The following example shows how I generated the documentation for my `ecio` package, which is an `R` data package for the [European Union Infringement Procedure (EUIP) Database](https://github.com/jfjelstul/euip). The `file_path` should be the path for the `R` folder in your package directory. You can specify the optional `author` and `package` arguments to include the name of the author(s) and the name of the package in the `roxygen2` files that are generated. 
+The following example shows how I generated the documentation for my `ecio` package, which is an `R` data package for the [European Union Infringement Procedure (EUIP) Database](https://github.com/jfjelstul/euip). The `file_path` should be the path for the `R` folder in your package directory. You can specify the optional `author` and `package` arguments to include the name of the author(s) and the name of the package in the `R` scripts that are generated. 
 
 As with the `create_codebook()` function, the `dataset_input` data frame must include: (1) a variable called `dataset` that is the name of each dataset, which will be used as the heading for each dataset section; (2) a variable called `label` that is a short label for each dataset (one line), which will be used as the subheading for each dataset section; and (3) a variable called `description` that is a description of each dataset, which will be included before the description of each variable. The dataset names should be valid `R` object names. Text wrapped in braces will be formatted as code. 
 
