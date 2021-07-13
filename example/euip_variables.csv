@@ -1,0 +1,246 @@
+dataset_id,dataset,variable_id,variable,type,description
+1,cases,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+1,cases,2,case_id,string,An ID number that uniquely identifies each case.
+1,cases,3,case_number,numeric,The number of the case.
+1,cases,4,case_year,numeric,The year of the case.
+1,cases,5,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+1,cases,6,member_state,string,The name of the member state that the Commission opened the case against. 
+1,cases,7,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+1,cases,8,department_id,numeric,An ID number that uniquely identifies each Commission department.
+1,cases,9,department,string,The name of the Commission department that opened the infringement case.
+1,cases,10,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+1,cases,11,directive,dummy,"A dummy variable indicating whether the description of the infringement case provided by the Commission references a directive that the case relates to. Directive numbers have the format {####/####}, where the first set of numbers is the year the directive was enacted and the second set is the number of the directive."
+1,cases,12,directive_number,string,"The number of the directive that the infringement case relates to, if applicable. Coded {NA} if the description of the case provided by the Commission does not reference a specific directive number."
+1,cases,13,celex,string,"The CELEX number of the directive that the infringement case relates to, if applicable. Coded {NA} if the description of the case provided by the Commission does not reference a specific directive number. CELEX numbers for directives have the format {3####L####}, where the first set of numbers is the year the directive was enacted and the second set is the number of the directive."
+1,cases,14,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+1,cases,15,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+1,cases,16,noncommunication,dummy,"A dummy variable indicating whether the infringement case is a noncommunication case, which is a case that relates to a member state failing to notify that Commission that it has transposed a directive by the stated deadline."
+1,cases,17,nonconformity,dummy,"A dummy variable indicating whether the infringement case is a nonconformity case, which is a case that relates to a member state incorrectly transposing a directive."
+1,cases,18,complete,dummy,"A dummy variable indicating whether the public records published by the Commission about the case are complete in that they include a record of a letter of formal notice under Article 258 of the Treaty of the Functioning of the European Union (TFEU), a record of the closing of the case, and a record of any stages of the infringement procedure in between. "
+1,cases,19,count_press_releases,numeric,The number of press releases published by the Commission related to the case.
+1,cases,20,stage_lfn_258,dummy,A dummy variable indicating whether the decision is a letter of formal notice sent by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,21,stage_ro_258,dummy,A dummy variable indicating whether the decision is a reasoned opinion sent by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,22,stage_rf_258,dummy,A dummy variable indicating whether the decision is a referral to the Court of Justice of the European Union (CJEU) made by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,23,stage_lfn_260,dummy,A dummy variable indicating whether the decision is a letter of formal notice sent by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,24,stage_ro_260,dummy,A dummy variable indicating whether the decision is a reasoned opinion sent by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,25,stage_rf_260,dummy,A dummy variable indicating whether the decision is a referral to the Court of Justice of the European Union (CJEU) made by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,26,stage_closing,dummy,A dummy variable indicating whether the decision is the closing of the case by the Commission. 
+1,cases,27,stage_withdrawal,dummy,A dummy variable indicating whether the decision is the withdrawal of the case by the Commission.
+1,cases,28,case_history,string,"A summary of the history of the case, including all decisions taken by the Commission in the case (with dates). "
+1,cases,29,corrected_lfn_258,dummy,A dummy variable indicating whether the decision is a letter of formal notice sent by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,30,corrected_ro_258,dummy,A dummy variable indicating whether the decision is a reasoned opinion sent by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,31,corrected_rf_258,dummy,A dummy variable indicating whether the decision is a referral to the Court of Justice of the European Union (CJEU) made by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,32,corrected_lfn_260,dummy,A dummy variable indicating whether the decision is a letter of formal notice sent by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,33,corrected_ro_260,dummy,A dummy variable indicating whether the decision is a reasoned opinion sent by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,34,corrected_rf_260,dummy,A dummy variable indicating whether the decision is a referral to the Court of Justice of the European Union (CJEU) made by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU). Corrected based on data about decisions made by the Commission at later stages of the infringement process.
+1,cases,35,count_decisions,numeric,The number of decisions issued by the Commission in the case. Based on the corrected data.
+1,cases,36,count_lfn_258,numeric,The number of letters of formal notice sent by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,37,count_ro_258,numeric,The number of reasoned opinions sent by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,38,count_rf_258,numeric,The number of referrals to the Court of Justice of the European Union (CJEU) made by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,39,count_lfn_260,numeric,The number of letters of formal notice sent by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,40,count_ro_260,numeric,The number of reasoned opinions sent by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,41,count_rf_260,numeric,The number of referrals to the Court of Justice of the European Union (CJEU) made by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+1,cases,42,count_missing,numeric,The number of decision stages prior to the last observed decision stage that are missing.
+1,cases,43,missing_lfn_258,dummy,A dummy variable indicating whether the Commission does not report a letter of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU) but does report a decision at a later stage of the infringement process.
+1,cases,44,missing_ro_258,dummy,A dummy variable indicating whether the Commission does not report a reasoned opinion under Article 258 of the Treaty on the Functioning of the European Union (TFEU) but does report a decision at a later stage of the infringement process.
+1,cases,45,missing_rf_258,dummy,A dummy variable indicating whether the Commission does not report a referral to the Court of Justice of the European Union (CJEU) under Article 258 of the Treaty on the Functioning of the European Union (TFEU) but does report a decision at a later stage of the infringement process.
+1,cases,46,missing_lfn_260,dummy,A dummy variable indicating whether the Commission does not report a letter of formal notice under Article 260 of the Treaty on the Functioning of the European Union (TFEU) but does report a decision at a later stage of the infringement process.
+1,cases,47,missing_ro_260,dummy,A dummy variable indicating whether the Commission does not report a reasoned opinion under Article 260 of the Treaty on the Functioning of the European Union (TFEU) but does report a decision at a later stage of the infringement process.
+2,cases_ts,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+2,cases_ts,2,year,numeric,The year the case was opened by the Commission.
+2,cases_ts,3,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+3,cases_ts_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+3,cases_ts_ct,2,year,numeric,The year the case was opened by the Commission.
+3,cases_ts_ct,3,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+3,cases_ts_ct,4,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+3,cases_ts_ct,5,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+4,cases_csts_ms,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+4,cases_csts_ms,2,year,numeric,The year the case was opened by the Commission.
+4,cases_csts_ms,3,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+4,cases_csts_ms,4,member_state,string,The name of the member state that the Commission opened the case against. 
+4,cases_csts_ms,5,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+4,cases_csts_ms,6,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+5,cases_csts_ms_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+5,cases_csts_ms_ct,2,year,numeric,The year the case was opened by the Commission.
+5,cases_csts_ms_ct,3,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+5,cases_csts_ms_ct,4,member_state,string,The name of the member state that the Commission opened the case against. 
+5,cases_csts_ms_ct,5,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+5,cases_csts_ms_ct,6,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+5,cases_csts_ms_ct,7,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+5,cases_csts_ms_ct,8,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+6,cases_csts_dp,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+6,cases_csts_dp,2,year,numeric,The year the case was opened by the Commission.
+6,cases_csts_dp,3,department_id,numeric,An ID number that uniquely identifies each Commission department.
+6,cases_csts_dp,4,department,string,The name of the Commission department that opened the infringement case.
+6,cases_csts_dp,5,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+6,cases_csts_dp,6,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+7,cases_csts_dp_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+7,cases_csts_dp_ct,2,year,numeric,The year the case was opened by the Commission.
+7,cases_csts_dp_ct,3,department_id,numeric,An ID number that uniquely identifies each Commission department.
+7,cases_csts_dp_ct,4,department,string,The name of the Commission department that opened the infringement case.
+7,cases_csts_dp_ct,5,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+7,cases_csts_dp_ct,6,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+7,cases_csts_dp_ct,7,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+7,cases_csts_dp_ct,8,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+8,cases_ddy,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+8,cases_ddy,2,year,numeric,The year the case was opened by the Commission.
+8,cases_ddy,3,department_id,numeric,An ID number that uniquely identifies each Commission department.
+8,cases_ddy,4,department,string,The name of the Commission department that opened the infringement case.
+8,cases_ddy,5,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+8,cases_ddy,6,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+8,cases_ddy,7,member_state,string,The name of the member state that the Commission opened the case against. 
+8,cases_ddy,8,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+8,cases_ddy,9,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+9,cases_ddy_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+9,cases_ddy_ct,2,year,numeric,The year the case was opened by the Commission.
+9,cases_ddy_ct,3,department_id,numeric,An ID number that uniquely identifies each Commission department.
+9,cases_ddy_ct,4,department,string,The name of the Commission department that opened the infringement case.
+9,cases_ddy_ct,5,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+9,cases_ddy_ct,6,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+9,cases_ddy_ct,7,member_state,string,The name of the member state that the Commission opened the case against. 
+9,cases_ddy_ct,8,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+9,cases_ddy_ct,9,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+9,cases_ddy_ct,10,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+9,cases_ddy_ct,11,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+10,cases_net,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+10,cases_net,2,year,numeric,The year the case was opened by the Commission.
+10,cases_net,3,from_node_id,numeric,"An ID number that uniquely identifies each node in the network that creates a link, which is always a Commission department."
+10,cases_net,4,from_node,string,The name of the Commission department that opened the infringement case.
+10,cases_net,5,to_node_id,numeric,"An ID number that uniquely identifies each node in the network that receives a link, which is always a member state."
+10,cases_net,6,to_node,string,The name of the member state that the Commission opened the case against. 
+10,cases_net,7,edge_weight,numeric,"The weight of the edge, which is the number of cases opened by the Commission."
+11,cases_net_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+11,cases_net_ct,2,year,numeric,The year the case was opened by the Commission.
+11,cases_net_ct,3,layer_id,numeric,An ID number that uniquely identifies each layer of the network.
+11,cases_net_ct,4,layer,string,"The layer of the network, which is type of case."
+11,cases_net_ct,5,from_node_id,numeric,"An ID number that uniquely identifies each node in the network that creates a link, which is always a Commission department."
+11,cases_net_ct,6,from_node,string,The name of the Commission department that opened the infringement case.
+11,cases_net_ct,7,to_node_id,numeric,"An ID number that uniquely identifies each node in the network that receives a link, which is always a member state."
+11,cases_net_ct,8,to_node,string,The name of the member state that the Commission opened the case against. 
+11,cases_net_ct,9,edge_weight,numeric,"The weight of the edge, which is the number of cases opened by the Commission."
+12,decisions,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+12,decisions,2,decision_id,numeric,An ID number that uniquely identifies each decision in an infringement case.
+12,decisions,3,case_id,string,An ID number that uniquely identifies each case.
+12,decisions,4,case_number,numeric,The number of the case.
+12,decisions,5,case_year,numeric,The year of the case.
+12,decisions,6,decision_date,date,The date that the Commission issued the decision in the format {YYYY-MM-DD}.
+12,decisions,7,decision_year,numeric,The year that the Commission issued the decision.
+12,decisions,8,decision_month,numeric,The month that the Commission issued the decision.
+12,decisions,9,decision_day,numeric,The day that the Commission issued the decision.
+12,decisions,10,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+12,decisions,11,member_state,string,The name of the member state that the Commission opened the case against. 
+12,decisions,12,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+12,decisions,13,department_id,numeric,An ID number that uniquely identifies each Commission department.
+12,decisions,14,department,string,The name of the Commission department that opened the infringement case.
+12,decisions,15,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+12,decisions,16,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+12,decisions,17,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+12,decisions,18,noncommunication,dummy,"A dummy variable indicating whether the infringement case is a noncommunication case, which is a case that relates to a member state failing to notify that Commission that it has transposed a directive by the stated deadline."
+12,decisions,19,nonconformity,dummy,"A dummy variable indicating whether the infringement case is a nonconformity case, which is a case that relates to a member state incorrectly transposing a directive."
+12,decisions,20,directive,dummy,"A dummy variable indicating whether the description of the infringement case provided by the Commission references a directive that the case relates to. Directive numbers have the format {####/####}, where the first set of numbers is the year the directive was enacted and the second set is the number of the directive."
+12,decisions,21,directive_number,string,"The number of the directive that the infringement case relates to, if applicable. Coded {NA} if the description of the case provided by the Commission does not reference a specific directive number."
+12,decisions,22,celex,string,"The CELEX number of the directive that the infringement case relates to, if applicable. Coded {NA} if the description of the case provided by the Commission does not reference a specific directive number. CELEX numbers for directives have the format {3####L####}, where the first set of numbers is the year the directive was enacted and the second set is the number of the directive."
+12,decisions,23,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court of Justice of the European Union (CJEU) under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 260."
+12,decisions,24,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}."
+12,decisions,25,stage_lfn_258,dummy,A dummy variable indicating whether the decision is a letter of formal notice sent by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+12,decisions,26,stage_ro_258,dummy,A dummy variable indicating whether the decision is a reasoned opinion sent by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+12,decisions,27,stage_rf_258,dummy,A dummy variable indicating whether the decision is a referral to the Court of Justice of the European Union (CJEU) made by the Commission under Article 258 of the Treaty on the Functioning of the European Union (TFEU).
+12,decisions,28,stage_lfn_260,dummy,A dummy variable indicating whether the decision is a letter of formal notice sent by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+12,decisions,29,stage_ro_260,dummy,A dummy variable indicating whether the decision is a reasoned opinion sent by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+12,decisions,30,stage_rf_260,dummy,A dummy variable indicating whether the decision is a referral to the Court of Justice of the European Union (CJEU) made by the Commission under Article 260 of the Treaty on the Functioning of the European Union (TFEU).
+12,decisions,31,stage_closing,dummy,A dummy variable indicating whether the decision is the closing of the case by the Commission. 
+12,decisions,32,stage_withdrawal,dummy,A dummy variable indicating whether the decision is the withdrawal of the case by the Commission.
+12,decisions,33,stage_additional,dummy,A dummy variable indicating whether the decision is an additional decision (a decision of the same type as a previous decision). 
+12,decisions,34,press_release,dummy,A dummy variable indicating whether the Commission published a press release to publicize the decision.
+13,decisions_ts,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+13,decisions_ts,2,year,numeric,The year the decision was issued by the Commission.
+13,decisions_ts,3,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 261"
+13,decisions_ts,4,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}. "
+13,decisions_ts,5,count_decisions,numeric,A count of the number of decisions made by the Commission in infringement cases at this level of aggregation.
+14,decisions_ts_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+14,decisions_ts_ct,2,year,numeric,The year the decision was issued by the Commission.
+14,decisions_ts_ct,3,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+14,decisions_ts_ct,4,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+14,decisions_ts_ct,5,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 262"
+14,decisions_ts_ct,6,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}. "
+14,decisions_ts_ct,7,count_cases,numeric,A count of the number of cases opened by the Commission at this level of aggregation.
+15,decisions_csts_ms,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+15,decisions_csts_ms,2,year,numeric,The year the decision was issued by the Commission.
+15,decisions_csts_ms,3,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+15,decisions_csts_ms,4,member_state,string,The name of the member state that the Commission opened the case against. 
+15,decisions_csts_ms,5,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+15,decisions_csts_ms,6,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 263"
+15,decisions_csts_ms,7,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}. "
+15,decisions_csts_ms,8,count_decisions,numeric,A count of the number of decisions made by the Commission in infringement cases at this level of aggregation.
+16,decisions_csts_ms_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+16,decisions_csts_ms_ct,2,year,numeric,The year the decision was issued by the Commission.
+16,decisions_csts_ms_ct,3,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+16,decisions_csts_ms_ct,4,member_state,string,The name of the member state that the Commission opened the case against. 
+16,decisions_csts_ms_ct,5,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+16,decisions_csts_ms_ct,6,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+16,decisions_csts_ms_ct,7,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+16,decisions_csts_ms_ct,8,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 264"
+16,decisions_csts_ms_ct,9,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}. "
+16,decisions_csts_ms_ct,10,count_decisions,numeric,A count of the number of decisions made by the Commission in infringement cases at this level of aggregation.
+17,decisions_csts_dp,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+17,decisions_csts_dp,2,year,numeric,The year the decision was issued by the Commission.
+17,decisions_csts_dp,3,department_id,numeric,An ID number that uniquely identifies each Commission department.
+17,decisions_csts_dp,4,department,string,The name of the Commission department that opened the infringement case.
+17,decisions_csts_dp,5,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+17,decisions_csts_dp,6,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 265"
+17,decisions_csts_dp,7,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}. "
+17,decisions_csts_dp,8,count_decisions,numeric,A count of the number of decisions made by the Commission in infringement cases at this level of aggregation.
+18,decisions_csts_dp_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+18,decisions_csts_dp_ct,2,year,numeric,The year the decision was issued by the Commission.
+18,decisions_csts_dp_ct,3,department_id,numeric,An ID number that uniquely identifies each Commission department.
+18,decisions_csts_dp_ct,4,department,string,The name of the Commission department that opened the infringement case.
+18,decisions_csts_dp_ct,5,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+18,decisions_csts_dp_ct,6,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+18,decisions_csts_dp_ct,7,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+18,decisions_csts_dp_ct,8,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 266"
+18,decisions_csts_dp_ct,9,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}. "
+18,decisions_csts_dp_ct,10,count_decisions,numeric,A count of the number of decisions made by the Commission in infringement cases at this level of aggregation.
+19,decisions_ddy,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+19,decisions_ddy,2,year,numeric,The year the decision was issued by the Commission.
+19,decisions_ddy,3,department_id,numeric,An ID number that uniquely identifies each Commission department.
+19,decisions_ddy,4,department,string,The name of the Commission department that opened the infringement case.
+19,decisions_ddy,5,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+19,decisions_ddy,6,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+19,decisions_ddy,7,member_state,string,The name of the member state that the Commission opened the case against. 
+19,decisions_ddy,8,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+19,decisions_ddy,9,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 267"
+19,decisions_ddy,10,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}. "
+19,decisions_ddy,11,count_decisions,numeric,A count of the number of decisions made by the Commission in infringement cases at this level of aggregation.
+20,decisions_ddy_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+20,decisions_ddy_ct,2,year,numeric,The year the decision was issued by the Commission.
+20,decisions_ddy_ct,3,department_id,numeric,An ID number that uniquely identifies each Commission department.
+20,decisions_ddy_ct,4,department,string,The name of the Commission department that opened the infringement case.
+20,decisions_ddy_ct,5,department_code,string,A multi-letter code assigned by the Commission that uniquely identifies each department.
+20,decisions_ddy_ct,6,member_state_id,numeric,An ID number that uniquely identifies each member state. This ID number is assigned when member states are sorted by accession date and then alphabetically. 
+20,decisions_ddy_ct,7,member_state,string,The name of the member state that the Commission opened the case against. 
+20,decisions_ddy_ct,8,member_state_code,string,A two letter code assigned by the Commission that uniquely identifies each member state. 
+20,decisions_ddy_ct,9,case_type_id,numeric,"An ID number that uniquely identifies each type of state aid cases. Coded {1} for noncommunication cases, which are cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {2} for nonconformity cases, which are cases that relate to a member state incorrectly transposing a directive. "
+20,decisions_ddy_ct,10,case_type,string,The type of the infringement case. There are two types of cases. Coded {noncommunication} for cases that relate to a member state failing to notify the Commission that it has transposed a directive by the stated deadline. Coded {nonconformity} for cases that relate to a member state incorrectly transposing a directive. 
+20,decisions_ddy_ct,11,decision_stage_id,numeric,"An ID number that uniquely identifies each decision stage in the infringement procedure. Coded {1} for letters of formal notice under Article 258 of the Treaty on the Functioning of the European Union (TFEU), coded {2} for reasoned opinions under Article 258, coded {3} for referrals to the Court under Article 258, coded {4} for letters of formal notice under Article 260, coded {5} for reasoned opinions under Article 260, and coded {6} for referrals to the Court under Article 268"
+20,decisions_ddy_ct,12,decision_stage,string,"The decision stage of the infringement procedure. Possible values include: {Letter of formal notice (Article 258)}, {Reasoned opinion (Article 259)}, {Referral to the Court (Article 258)}, {Letter of formal notice (Article 260)}, {Reasoned opinion (Article 260)}, and {Referral to the Court (Article 260)}. "
+20,decisions_ddy_ct,13,count_decisions,numeric,A count of the number of decisions made by the Commission in infringement cases at this level of aggregation.
+21,decisions_net,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+21,decisions_net,2,year,numeric,The year the decision was issued by the Commission.
+21,decisions_net,3,layer_id,numeric,An ID number that uniquely identifies each layer of the network.
+21,decisions_net,4,layer,string,"The layer of the network, which is the decision stage."
+21,decisions_net,5,from_node_id,numeric,"An ID number that uniquely identifies each node in the network that creates a link, which is always a Commission department."
+21,decisions_net,6,from_node,string,The name of the Commission department that opened the infringement case.
+21,decisions_net,7,to_node_id,numeric,"An ID number that uniquely identifies each node in the network that receives a link, which is always a member state."
+21,decisions_net,8,to_node,string,The name of the member state that the Commission issued the decision against. 
+21,decisions_net,9,edge_weight,numeric,"The weight of the edge, which is the number of decisions opened by the Commission."
+22,decisions_net_ct,1,key_id,numeric,An ID number that uniquely identifies each observation in the dataset. 
+22,decisions_net_ct,2,year,numeric,The year the decision was issued by the Commission.
+22,decisions_net_ct,3,d1_layer_id,numeric,An ID number that uniquely identifies each layer of the network within the first dimension.
+22,decisions_net_ct,4,d1_layer,string,"The layer of the network within the first dimension, which is type of case."
+22,decisions_net_ct,5,d2_layer_id,numeric,An ID number that uniquely identifies each layer of the network within the second dimension.
+22,decisions_net_ct,6,d2_layer,string,"The layer of the network within the second dimension, which is the decision stage."
+22,decisions_net_ct,7,from_node_id,numeric,"An ID number that uniquely identifies each node in the network that creates a link, which is always a Commission department."
+22,decisions_net_ct,8,from_node,string,The name of the Commission department that opened the infringement case.
+22,decisions_net_ct,9,to_node_id,numeric,"An ID number that uniquely identifies each node in the network that receives a link, which is always a member state."
+22,decisions_net_ct,10,to_node,string,The name of the member state that the Commission opened the case against. 
+22,decisions_net_ct,11,edge_weight,numeric,"The weight of the edge, which is the number of decisions opened by the Commission."

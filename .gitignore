@@ -3,7 +3,6 @@
 .Rhistory
 .Rproj.user/
 output/
-example/
 *.Rproj
 dev/
 test/
