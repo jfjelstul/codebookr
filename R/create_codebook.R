@@ -20,21 +20,23 @@
 #' @param datasets_input A data frame containing information on each dataset.
 #'   This data frame must include: (1) a variable called \code{dataset} that is
 #'   the name of each dataset, which will be used as the heading for each
-#'   dataset section; (2) a variable called \code{title} that is a short title
+#'   dataset section; (2) a variable called \code{label} that is a short label
 #'   for each dataset (one line), which will be used as the subheading for each
 #'   dataset section; and (3) a variable called \code{description} that is a
 #'   description of each dataset, which will be included before the description
-#'   of each variable.
+#'   of each variable. Text wrapped in braces will be formatted as code. The
+#'   dataset names should be valid \code{R} object names.
 #' @param variables_input A data frame containing infromation on each variable.
 #'   This data frame must include: (1) a variable called \code{dataset}, where
 #'   each dataset maps exactly to the datasets in the \code{dataset} variable in
 #'   the \code{datasets_input} data frame; and (2) a variable called
-#'   \code{description} that is a description of each variable. Optionally, the
-#'   data frame can include a variable called \code{type} that indicates the
-#'   type of each variable (e.g., numeric, string, etc.). If this variable is
-#'   included, and the \code{include_variable_type} argument is set to
-#'   \code{TRUE}, then the variable type will be included at the beginning of
-#'   each variable description.
+#'   \code{description} that is a description of each variable. Text wrapped in
+#'   braces will be formatted as code. Optionally, the data frame can include a
+#'   variable called \code{type} that indicates the type of each variable (e.g.,
+#'   numeric, string, etc.). If this variable is included, and the
+#'   \code{include_variable_type} argument is set to \code{TRUE}, then the
+#'   variable type will be included at the beginning of each variable
+#'   description.
 #' @param file_path The path and file for the \code{.tex} file that will be
 #'   created. You need to include the \code{.tex} extension in the file name.
 #' @param title_text A string containing the title for the title page.
@@ -48,6 +50,10 @@
 #'   authors for the title page or a string if there is one author.
 #' @param table_of_contents A logical value indicating whether to include a
 #'   table of contents.
+#' @param include_variable_type A logical value indicating whether to include
+#'   the type of the variable in the variable description. The
+#'   \code{variables_input} data frame must have a variable called \code{type}
+#'   or you will get an error.
 #' @param theme_color A string indicating the color to use. The color should be
 #'   a valid hex code, including a leading \code{#}. If you don't provide a
 #'   valid hex code, your \code{LaTeX} compiler will produce an error (but this
@@ -57,17 +63,17 @@
 #'   \code{dataset} variable in the \code{datasets_input} data frame). You
 #'   should adjust the font size to make sure your text fits.
 #' @param subheading_font_size The size of the font for the subheading for each
-#'   dataset section (i.e., the short title for the dataset, contained in the
-#'   \code{title} variable in the \code{datasets_input} data frame). You should
+#'   dataset section (i.e., the short label for the dataset, contained in the
+#'   \code{label} variable in the \code{datasets_input} data frame). You should
 #'   adjust the font size to make sure your text fits.
 #' @param title_font_size The size of the font for the title on the title page.
 #'   You should adjust the font size to make sure your text fits.
 #' @export
 create_codebook  <- function(
-  datasets_input, variables_input,
   file_path,
+  datasets_input, variables_input,
   title_text, version_text, footer_text, author_names,
-  table_of_contents = TRUE,
+  table_of_contents = TRUE, include_variable_type = FALSE,
   theme_color = "#3B86F7",
   title_font_size = 16, heading_font_size = 35, subheading_font_size = 12
 ) {
@@ -83,7 +89,7 @@ create_codebook  <- function(
     dataset_code <- stringr::str_replace(dataset_code, "HEADING", datasets_input$dataset[i])
 
     # inject subheading
-    dataset_code <- stringr::str_replace(dataset_code, "SUBHEADING", datasets_input$heading[i])
+    dataset_code <- stringr::str_replace(dataset_code, "SUBHEADING", datasets_input$label[i])
 
     # inject heading font size
     dataset_code <- stringr::str_replace(dataset_code, "HEADING_FONT_SIZE", as.character(heading_font_size))
@@ -113,9 +119,19 @@ create_codebook  <- function(
     variable_names <- variables_input$variable[variables_input$dataset == datasets_input$dataset[i]]
     variable_descriptions <- variables_input$description[variables_input$dataset == datasets_input$dataset[i]]
 
-    # clean
+    # format variable names
     variable_names <- format_code(variable_names)
-    variable_descriptions <- format_code(variable_descriptions)
+
+    # variable type
+    if (!is.null(variables_input$type)) {
+      if (include_variable_type) {
+        prefix <- variables_input$type[variables_input$dataset == datasets_input$dataset[i]]
+        prefix <- stringr::str_c("\\code{", prefix, "}")
+        variable_descriptions <- stringr::str_c(prefix, "\\hspace{5pt}", format_code(variable_descriptions))
+      }
+    } else {
+      variable_descriptions <- format_code(variable_descriptions)
+    }
 
     # create items for dataset i
     items <- stringr::str_c("\\item[\\code{", variable_names, "}] ", variable_descriptions)
