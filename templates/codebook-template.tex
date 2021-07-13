@@ -98,7 +98,7 @@
 %--------------------------------------------------%
 
 % a command to make a code box
-\newtcbox{\codebox}{nobeforeafter,tcbox raise base,colback=black!5,colframe=white,coltext=black!75,boxrule=0pt,arc=4pt,boxsep=0pt,
+\newtcbox{\codebox}{nobeforeafter,tcbox raise base,colback=black!5,colframe=white,coltext=black!75,boxrule=0pt,arc=3pt,boxsep=0pt,
 left=4pt,right=4pt,top=3pt,bottom=3pt}
 
 % a command to make a chip
@@ -115,40 +115,38 @@ left=10pt,right=10pt,top=8pt,bottom=8pt}
 \newcommand{\dividerline}{{\color{gray!10} \rule[4pt] {\textwidth}{3pt}}}
 
 % command to add a cover
-\newcommand\cover{
+\newcommand{\cover}[4]{
 \begin{tikzpicture}[remember picture,overlay, shift={(current page.south west)}]
-\draw (-2.4in,-0.6in) node[anchor = south west] {\includegraphics[height=9.7in]{cover}};
-\fill[themecolor] (0, 8.5in) rectangle ++ (8.5in, 2.5in); % header bar
-\fill[themecolor] (0, 0) rectangle ++ (8.5in, 0.5in); % footer bar
-\fill[black!10] (0, 8.5in) rectangle ++ (8.5in, -0.1in); % top line
-\fill[black!10] (0, 0.5in) rectangle ++ (8.5in, 0.1in); % bottom line
-\draw (0.5in,10in) node[anchor = west] {{\color{black!10} \fontsize{65}{65}\selectfont \textbf{CANADA} \fontsize{15}{15}\selectfont v 1.0}};
-\draw (0.5in,9.1in) node[anchor = west] {{\color{black!10} \fontsize{15}{15}\selectfont The \textbf{Canadian House of Commons} Codebook}};
-\draw (0.5in,0.25in) node[anchor = west] {{\color{black!10} \fontsize{12}{12}\selectfont Joshua C. Fjelstul, Ph.D.}};
+\fill[themecolor] (0, 5.5in) rectangle ++ (8.5in, 5.5in); % header bar
+\fill[black!5] (0, 4in) rectangle ++ (8.5in, 1.5in); % middle bar
+\fill[white] (0, 0in) rectangle ++ (8.5in, 4in); % footer bar
+\node[anchor=west] at (1.5in, 6.25in) {\color{white} \fontsize{60}{60}\selectfont \begin{minipage}{5.5in} \textbf{Codebook} \fontsize{15}{15}\selectfont \hspace{5pt} v #2 \end{minipage}};
+\node[anchor=west, align=left] at (1.5in, 4.75in) {\begin{minipage}{5.5in} \color{black!40} \fontsize{#4}{#4} \selectfont #1 \end{minipage}};
+\node[anchor=west, align=left, minimum height=2in] at (1.5in, 2.55in) {\begin{minipage}[t][2in]{5.5in} \color{black!40} \fontsize{10}{10} \selectfont #3 \end{minipage}};
 \end{tikzpicture}
 }
 
 % command to add a header page
-\newcommand{\headerpage}[2]{
+\newcommand{\headerpage}[4]{
 	\newpage
 	\begin{tikzpicture}[remember picture,overlay, shift={(current page.south west)}]
-		\fill[themecolor] (0, 9.5in) rectangle ++ (8.5in, 1.5in); % header line 1
-		\fill[black!5] (0, 8.5in) rectangle ++ (8.5in, 1in); % header line 2
-		\draw (1.5in, 9.875in) node[anchor = west] {\hspace{-5pt} {\Huge \color{white} \textbf{#1}}}; % heading
-		\draw (1.5in, 8.975in) node[anchor = west] {\hspace{-5pt} {\normalsize \color{black!40} #2}}; % heading
+		\fill[themecolor] (0, 9in) rectangle ++ (8.5in, 2in); % header line 1
+		\fill[black!5] (0, 8in) rectangle ++ (8.5in, 1in); % header line 2
+		\node[anchor = west] at (1.5in, 9.6in) {\color{white} \fontsize{#3}{#3}\selectfont \textbf{#1}}; % heading
+		\node[anchor = west] at (1.5in, 8.5in) {\color{black!40} \fontsize{#4}{#4}\selectfont #2}; % heading
 	\end{tikzpicture}
 	\phantomsection
 	\addcontentsline{toc}{section}{#1}
-	\vspace{1in}
+	\vspace{1.5in}
 }
 
 % command to layout page
 \newcommand\pagelayout{
 	\begin{tikzpicture}[remember picture,overlay, shift={(current page.south west)}]
-		\fill[themecolor] (0, 10.75in) rectangle ++ (8.5in, 0.25in); % header
+		% \fill[themecolor] (0, 10.75in) rectangle ++ (8.5in, 0.25in); % header
 		\fill[black!5] (0, 0) rectangle ++ (8.5in, 0.5in); % footer
-		\draw (0.25in,0.25in) node[anchor = west] {{\small \color{black!40} FOOTER}}; % footer content
-		\draw (8.25in,0.25in) node[anchor = east] {{\small \color{black!40} \thepage}}; % page number
+		\draw (0.25in, 0.25in) node[anchor = west] {\fontsize{9}{9}\selectfont \color{black!40} FOOTER_TEXT}; % footer content
+		\draw (8.25in, 0.25in) node[anchor = east] {\fontsize{9}{9}\selectfont \color{black!40} \thepage}; % page number
 	\end{tikzpicture}
 }
 
@@ -157,13 +155,13 @@ left=10pt,right=10pt,top=8pt,bottom=8pt}
 	\AtBeginShipoutUpperLeft{\pagelayout}
 }
 
-
 % command to add a subheading
 \newcommand{\subheading}[1]{
-\vspace{20pt}
-{\color{themecolor}\Large\textbf{#1}}
-\vspace{5pt}
+\vspace{24pt}
+{\color{themecolor} \fontsize{14}{14}\selectfont \textbf{#1}}
+\vspace{6pt}
 \dividerline
+\vspace{-20pt}
 }
 
 %--------------------------------------------------%
@@ -182,14 +180,23 @@ left=10pt,right=10pt,top=8pt,bottom=8pt}
 \begin{flushleft}
 
 %--------------------------------------------------%
+% cover
+%--------------------------------------------------%
+
+\cover{TITLE_TEXT}{VERSION_TEXT}{AUTHOR_NAMES}{TITLE_FONT_SIZE}
+
+\newpage
+
+%--------------------------------------------------%
 % table of contents
 %--------------------------------------------------%
 
-TABLE
+TABLE_OF_CONTENTS
 
 %--------------------------------------------------%
 % content
 %--------------------------------------------------%
+
 
 CONTENT
 
