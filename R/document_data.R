@@ -56,26 +56,30 @@
 #' @param markdown_file The path and file for a markdown file that contains a
 #'   header and description for each dataset. The markdown file must be a
 #'   \code{.txt}, \code{.md}, or \code{.Rmd} file.
+#' @param datasets_file The path and file for information about the datasets.
+#'   The file must be a \code{.csv} file.
 #' @param author Optional. A string or string vector indicating the name of the
 #'   package author(s). If provided, these names will be included in the header
-#' of each \code{.R} file produced.
+#'   of each \code{.R} file produced.
 #' @param package Optional. A string indicating the name of the package that the
 #'   data will be distributed in. If provided, the name of the package will be
 #'   included in the header of each \code{.R} file produced.
 #' @export
-document_data <- function(path, codebook_file, markdown_file, author = NULL, package = NULL) {
+document_data <- function(path, variables_file, datasets_file = NULL, markdown_file = NULL, author = NULL, package = NULL) {
 
   # read in data
-  codebook <- read.csv(codebook_file, stringsAsFactors = FALSE)
+  codebook <- read.csv(variables_file, stringsAsFactors = FALSE)
 
   # parse markdown
-  markdown <- parse_markdown(markdown_file)
-
-  # titles
-  titles <- markdown$titles
-
-  # descriptions
-  descriptions <- markdown$descriptions
+  if (!is.null(markdown_file)) {
+    markdown <- parse_markdown(markdown_file)
+    titles <- markdown$titles
+    descriptions <- markdown$descriptions
+  } else {
+    dataset_info <- read.csv(datasets_file, stringsAsFactors = FALSE)
+    titles <- dataset_info$label
+    descriptions <- dataset_info$description
+  }
 
   # the names of the datasets
   datasets <- unique(codebook$dataset)
