@@ -1,15 +1,15 @@
 Package: codebookr
-Title: Create LaTeX Codebooks in R
-Version: 1.0.0
+Title: Tools to Document Datasets in R
+Version: 1.0.9000
 Authors@R:
     person(given = "Joshua C.",
            family = "Fjelstul",
            role = c("aut", "cre"),
            email = "joshfjelstul@gmail.com",
            comment = c(ORCID = "0000-0002-9494-260X"))
-Description: This package lets you make make LaTeX codebooks in R. You provide a data.frame or tibble with variable names and descriptions and an R markdown file with dataset names and descriptions and the function create_codebook() creates a .tex file for your codebook. You can then build the codebook using your favorite LaTeX editor. The package multiple datasets within the same database or data project. It also supports tables of contents. You can customize the codebook in a variety of ways.
+Description: This R package contains tools for easily generating documentation for datasets. There are two main functions: create_codebook() and document_data(). The function create_codebook() generates LaTeX code (a .tex file) for a nicely-formatted .pdf codebook. There's an example in the example/ directory. The function document_data() automatically generates R documentation for an R data package (i.e., an R script for each dataset in your project with roxygen2 comments). These functions make it easy to produce documentation for a data project. 
 URL: https://github.com/jfjelstul/codebookr
-Date: 2021-01-22
+Date: 2021-07-12
 License: MIT
 Encoding: UTF-8
 LazyData: true
